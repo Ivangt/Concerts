@@ -27,13 +27,20 @@ public class DownloadPage {
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
         String line = null;
+        
 
         // read each line and write to System.out
         while ((line = br.readLine()) != null) {
         	String[] partar = line.split("eventDateName");
         	for(int i=0;i<partar.length;i++)
         	{
-        		System.out.println(partar[i]);
+        		String str = partar[i];
+        		int spaceIndex = str.indexOf("name");
+                if(spaceIndex!=-1)
+                {
+                	str = str.substring(0,spaceIndex);
+                }
+        		System.out.println(str);
         	}
         	//Þessi lína er bara til að prenta allan source kóðann
 //            System.out.println(line);
