@@ -31,18 +31,19 @@ public class DownloadPage {
 
         // read each line and write to System.out
         while ((line = br.readLine()) != null) {
+        	//Splitta upp í array EFTIR orðið "eventDateName"
         	String[] partar = line.split("eventDateName");
         	for(int i=0;i<partar.length;i++)
         	{
-        		String str = partar[i];
-        		int spaceIndex = str.indexOf("name");
+        		String str = partar[i];			//Bý til strengi úr öllum pörtunum, einn í einu
+        		int spaceIndex = str.indexOf("name");		//Finn staðsetningu "name" í strengnum
                 if(spaceIndex!=-1)
                 {
-                	str = str.substring(0,spaceIndex);
+                	str = str.substring(0,spaceIndex);		//Eyði öllu sem kemur eftir "name"
                 }
-        		System.out.println(str);
+        		System.out.println(str);		//Prenta strengina
         	}
-        	//�essi l�na er bara til a� prenta allan source k��ann
+        	//Þessi lína er bara til að prenta allan source kóðann
 //            System.out.println(line);
         }
     }
