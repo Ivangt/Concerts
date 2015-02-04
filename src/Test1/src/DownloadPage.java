@@ -32,11 +32,11 @@ public class DownloadPage {
         // read each line and write to System.out
         while ((line = br.readLine()) != null) {
         	//Splitta upp í array EFTIR orðið "eventDateName"
-        	String[] partar = line.split("eventDateName");
+        	String[] partar = line.split("eventDateName\":\"");
         	for(int i=0;i<partar.length;i++)
         	{
         		String str = partar[i];			//Bý til strengi úr öllum pörtunum, einn í einu
-        		int spaceIndex = str.indexOf("name");		//Finn staðsetningu "name" í strengnum
+        		int spaceIndex = str.indexOf("\",\"name");		//Finn staðsetningu "name" í strengnum
                 if(spaceIndex!=-1)
                 {
                 	str = str.substring(0,spaceIndex);		//Eyði öllu sem kemur eftir "name"
